@@ -1,0 +1,23 @@
+[
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Farmer", "description": "Tilling land, sowing, reaping, and raising animals for a lord or for subsistence."},
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Laborer / Husbandman", "description": "Performing general labor on an estate."},
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Shepherd / Animal Herder", "description": "Tending to livestock."},
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Miller", "description": "Operating a mill to grind grain, a relatively well-off but sometimes 'contemptible' profession."},
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Logger", "description": "Felling trees and preparing wood."},
+    {"literacy": "illiterate", "type": "agriculture / rural", "title": "Hunter / Fisherman", "description": "Providing food through hunting or fishing."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Blacksmith", "description": "Forging tools, weapons, and general ironwork."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Carpenter", "description": "Working with wood to build structures and tools."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Stonemason", "description": "Cutting and shaping stone for buildings, from basic structures to cathedrals."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Weaver / Tailor", "description": "Producing cloth and making garments."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Shoemaker / Cobbler", "description": "Making new shoes (cordwainer) or repairing old ones (cobbler)."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Potter", "description": "Making ceramic goods and pottery."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Butcher", "description": "Slaughtering animals and selling meat."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Baker", "description": "Baking bread and other goods."},
+    {"literacy": "illiterate", "type": "Craft / Trade", "title": "Tanner", "description": "Processing animal skins into leather (a very dirty and low-status job)."},
+    {"literacy": "illiterate", "type": "Service", "title": "Gong Farmer", "description": "A notoriously dirty job involving the removal of human waste from privies."},
+    {"literacy": "illiterate", "type": "Service", "title": "Messenger / Runner", "description": "Delivering messages and packages face-to-face."},
+    {"literacy": "illiterate", "type": "Service", "title": "Stablehand / Dockworker", "description": "Performing manual labor in stables, warehouses, or on the docks."},
+    {"literacy": "illiterate", "type": "Service", "title": "Refuse Picker", "description": "Collecting waste products from streets which could be used in manufacturing."},
+    {"literacy": "illiterate", "type": "Service", "title": "Inn Keeper / Tavern Owner", "description": "While some record-keeping might be involved, many smaller businesses relied on simple tally systems or hired a clerk for complex tasks."},
+    {"literacy": "literate", "type": "", "title": "", "description": ""}
+]
