@@ -1,0 +1,14 @@
+html {
+    padding: 20px;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+details {
+    cursor: pointer;
+}
+
+details[open] > *:not(summary) {
+    margin-left: 2em;
+    /*cursor: pointer;*/
+}

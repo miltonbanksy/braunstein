@@ -10,6 +10,85 @@
 <body>
     <!-- All visible content goes here -->
     <h1>Braunstein Rules</h1>
+    <details>
+        <summary class="pointer">Campaign Setup</summary>
+        <details>
+            <summary>Choose Armor Rules</summary>
+            <details>
+                <summary>Basic Rules</summary>
+                <details>
+                    <summary>No Armor</summary>
+                    If Luck reaches 0, character is out of the fight.
+                    <br>Move: 50' per round.
+                    <br>Climb: 10' per round.
+                    <br>No penalty to stealth, climb, swim, etc.
+                    <br><br>
+                </details>
+                <details>
+                    <summary>Armored</summary>
+                    Restore 10% of total Luck on KO (round up).
+                    <br>Move: 30' per round.
+                    <br>No run, stealth, climb, swim, etc.
+                    <br><br>
+                </details>
+                
+            </details>
+            <details>
+                <summary>Advanced Rules</summary>
+                <details>
+                    <summary>No Armor</summary>
+                    Move: 50' per round.
+                    <br>Climb: 10' per round.
+                    <br>No penalty to stealth, climb, swim, etc.
+                    <br><br>
+                </details>
+                <details>
+                    <summary>Light Armor</summary>
+                    Restore 10% of total Luck on KO (round up).
+                    <br>Move: 40' per round.
+                    <br>Climb: 5' per round. (ruling tbc…)
+                    <br>-1 penalty to stealth, climb, swim, etc.
+                    <br><br>
+                </details>
+                <details>
+                    <summary>Heavy Armor</summary>
+                    Restore 20% of total Luck on KO (round up).
+                    <br>Move: 30' per round.
+                    <br>No run, stealth, climb, swim, etc.
+                    <br><br>
+                </details>
+            </details>
+        </details>
+        <details>
+            <summary>Choose Shield Rules</summary>
+            <details>
+                <summary>Basic Rules</summary>
+                A shield allows the character to ignore up to 3 points of damage from a single attack, after which the item is damaged and unusable.
+                <br><br>
+            </details>
+            <details>
+                <summary>Alternative Rules</summary>
+                A shield allows the character to ignore 3 hits of damage incrementally, after which the item is damaged and unusable.
+                <br><br>
+            </details>
+        </details>
+    </details>
+    <details>
+        <summary>Character Creation</summary>
+        <details>
+            <summary>Chooose Literacy</summary>
+            <details>
+                <summary>Illiterate (Unable to read or write)</summary>
+                Create, choose, or randomly generate a profession
+                <br>
+                <select id="select-medieval-jobs"></select>
+            </details>
+            <details>
+                <summary>Literate (Able to read and write)</summary>
+            </details>
+        </details>
+    </details>
+
 
     <!-- Link to your JavaScript file -->
     <script src="script.js"></script>
