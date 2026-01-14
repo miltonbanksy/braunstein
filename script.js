@@ -1,65 +1,58 @@
-const selectMedievalJobsIlliterate = document.getElementById('select-medieval-jobs-illiterate');
-const selectMedievalJobsLiterate = document.getElementById('select-medieval-jobs-literate');
-const jobDetailsIlliterate = document.getElementById('job-details-illiterate');
-const jobDetailsLiterate = document.getElementById('job-details-literate');
+let medievalJobs = []; // store all jobs
 
-let medievalJobs = [];
+// Helper to create a dropdown + details container
+function createJobDropdown(literacy, jobs, container) {
+  const section = document.createElement('div');
+  section.classList.add('dropdown-section');
 
-selectMedievalJobsIlliterate.innerHTML = '<option value="">Choose a job</option>';
-selectMedievalJobsLiterate.innerHTML = '<option value="">Choose a job</option>';
+  // Label
+  const label = document.createElement('label');
+  label.textContent = `${literacy.charAt(0).toUpperCase() + literacy.slice(1)} jobs: `;
+  section.appendChild(label);
 
-function fetchJobsJSON(literacy, dropdownTarget) {
-    fetch('medieval_jobs.json')
-        .then(response => response.json())
-        .then(data => {
-            medievalJobs = data;
+  // Dropdown
+  const select = document.createElement('select');
+  select.innerHTML = '<option value="">Choose a job</option>';
+  section.appendChild(select);
 
-            data
-                .filter(job => job.literacy === literacy)
-                .forEach(job => {
-                    const option = document.createElement('option');
-                    option.value = job.title;   // or job.id if you have one
-                    option.textContent = job.title;
-                    dropdownTarget.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.log('Error fetching the JSON file:', error);
+  // Details container
+  const details = document.createElement('div');
+  details.classList.add('job-details');
+  section.appendChild(details);
+
+  // Populate dropdown
+  jobs
+    .filter(job => job.literacy === literacy)
+    .forEach(job => {
+      const option = document.createElement('option');
+      option.value = job.title;
+      option.textContent = job.title;
+      select.appendChild(option);
     });
+
+  // Event listener
+  select.addEventListener('change', () => {
+    const job = jobs.find(j => j.title === select.value);
+    details.innerHTML = job
+      ? `<b>${job.title}</b> (${job.type})<br>${job.description}`
+      : '';
+  });
+
+  container.appendChild(section);
 }
 
+// Fetch JSON and generate dropdowns dynamically
+fetch('medieval_jobs.json')
+  .then(res => res.json())
+  .then(data => {
+    medievalJobs = data;
 
-// // LISTENERS
-selectMedievalJobsIlliterate.addEventListener('change', (event) => {
-  const selectedTitle = event.target.value;
+    const container = document.getElementById('job-dropdowns-container');
 
-  const selectedJob = medievalJobs.find(
-    job => job.title === selectedTitle
-  );
+    // Get unique literacy types
+    const literacyTypes = [...new Set(data.map(job => job.literacy))];
 
-  if (!selectedJob) return;
-
-  jobDetailsIlliterate.innerHTML = `
-    <b>${selectedJob.title}</b> (${selectedJob.type})
-    <br>${selectedJob.description}</br><br>
-  `;
-});
-
-selectMedievalJobsLiterate.addEventListener('change', (event) => {
-  const selectedTitle = event.target.value;
-
-  const selectedJob = medievalJobs.find(
-    job => job.title === selectedTitle
-  );
-
-  if (!selectedJob) return;
-
-  jobDetailsLiterate.innerHTML = `
-    <b>${selectedJob.title}</b> (${selectedJob.type})
-    <br>${selectedJob.description}</br><br>
-  `;
-});
-
-
-fetchJobsJSON("illiterate", selectMedievalJobsIlliterate);
-fetchJobsJSON("literate", selectMedievalJobsLiterate);
+    // Create dropdown for each literacy type
+    literacyTypes.forEach(type => createJobDropdown(type, data, container));
+  })
+  .catch(err => console.error('Error fetching JSON:', err));

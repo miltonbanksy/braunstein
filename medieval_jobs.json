@@ -1,6 +1,6 @@
 [
     {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Farmer", "description": "Tilling land, sowing, reaping, and raising animals for a lord or for subsistence."},
-    {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Laborer / Husbandman / Plowman / Reaper", "description": "Performing general labor on an estate."},
+    {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Laborer / Plowman / Reaper", "description": "Performing general labor on an estate."},
     {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Shepherd / Animal Herder", "description": "Tending to livestock."},
     {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Miller", "description": "Operating a mill to grind grain, a relatively well-off but sometimes 'contemptible' profession."},
     {"literacy": "illiterate", "type": "Agriculture / Rural", "title": "Logger", "description": "Felling trees and preparing wood."},
