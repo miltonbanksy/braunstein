@@ -1,20 +1,23 @@
-const jobs_illiterate = [
-    {type: "agriculture / rural", title: "Farmer", description: "Tilling land, sowing, reaping, and raising animals for a lord or for subsistence."},
-    {type: "agriculture / rural", title: "Laborer / Husbandman", description: "Performing general labor on an estate."},
-    {type: "agriculture / rural", title: "Shepherd / Animal Herder", description: "Tending to livestock."},
-    {type: "agriculture / rural", title: "Miller", description: "Operating a mill to grind grain, a relatively well-off but sometimes 'contemptible' profession."},
-    {type: "agriculture / rural", title: "Logger", description: "Felling trees and preparing wood."},
-    {type: "agriculture / rural", title: "Hunter / Fisherman", description: "Providing food through hunting or fishing."},
-    {type: "Craft / Trade", title: "Blacksmith", description: "Forging tools, weapons, and general ironwork."},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-    {type: "Craft / Trade", title: "", description: ""},
-]
+fetch('medieval_jobs.json')
+    .then(response => response.json()
+    .then(data => {
+        /*
+        // Print List on screen
+        const container = document.getElementById('data-container');
+        data.forEach(item => {
+            const div = document.createElement('div');
+            div.innerHTML = `Title: ${item.title}`;
+            container.appendChild(div);
+        });
+        */
+        const selectMedievalJobs = document.getElementById('select-medieval-jobs');
+        data.forEach(item => {
+            const option = document.createElement('option');
+            option.textContent = `${item.title}`;
+            selectMedievalJobs.appendChild(option);
+        });
+    })
+    .catch(error => {
+        console.log('Error fetching the JSON file:', error);
+    })
+)
