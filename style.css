@@ -8,6 +8,10 @@ details {
     cursor: pointer;
 }
 
+select {
+    font-size: 12px;
+}
+
 details[open] > *:not(summary) {
     margin-left: 2em;
     /*cursor: pointer;*/
