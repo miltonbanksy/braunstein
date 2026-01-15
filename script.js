@@ -1,3 +1,4 @@
+let characterDetails = {}
 let medievalJobs = []; // store all jobs
 
 // Helper to create a dropdown + details container
