@@ -67,6 +67,7 @@ fetch('medieval_jobs.json')
 
     // Get unique literacy types
     const literacyTypes = [...new Set(data.map(job => job.literacy))];
+    console.log(literacyTypes)
 
     // Create dropdown for each literacy type
     literacyTypes.forEach(type => createJobDropdown(type, data, container));
