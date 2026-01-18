@@ -1,0 +1,47 @@
+[
+    {
+        "rule": "basic", 
+        "armor": [
+            {
+                "type": "No Armor", 
+                "defence": "If luck is reduced to 0, character is out of the fight",
+                "move": 50,
+                "climb": 10,
+                "penalty": "No penalty to stealth, climb, swim, etc."
+            },
+            {
+                "type": "Armored", 
+                "defence": "If luck is reduced to 0, restore 10% of total Luck (rounded up). Armor is unusuable until repaired.",
+                "move": 30,
+                "climb": 0,
+                "penalty": "No run, stealth, climb, swim, etc."
+            }
+        ]
+    },
+    {
+        "rule": "advanced",
+        "armor": [
+            {
+                "type": "No Armor", 
+                "defence": "If luck is reduced to 0, character is out of the fight",
+                "move": 50,
+                "climb": 10,
+                "penalty": "No penalty to stealth, climb, swim, etc."
+            },
+            {
+                "type": "Light Armor", 
+                "defence": "If luck is reduced to 0, restore 10% of total Luck (rounded up). Armor is unusuable until repaired.",
+                "move": 40,
+                "climb": 5,
+                "penalty": "-1 penalty to stealth, climb, swim, etc."
+            },
+            {
+                "type": "Heavy Armor", 
+                "defence": "If luck is reduced to 0, restore 20% of total Luck (rounded up). Armor is unusuable until repaired.",
+                "move": 30,
+                "climb": 0,
+                "penalty": "No run, stealth, climb, swim, etc."
+            }
+        ]
+    }
+]

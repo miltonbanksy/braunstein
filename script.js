@@ -75,23 +75,24 @@ fetch('medieval_jobs.json')
   })
   .catch(err => console.error('Error fetching JSON:', err));
 
-  fetch('magic.json').then(res => res.json()).then(data => {
-    magicDetails = data;
-    const selectMagic = document.getElementById('select-magic');
-    selectMagic.innerHTML = '<option value="">Choose...</option>';
-    data.forEach(magic => {
-      const option = document.createElement('option');
-      option.value = magic.magic;
-      option.textContent = magic.magic;
-      selectMagic.appendChild(option);
-    })
 
-    selectMagic.addEventListener('change', () => {
-      const job = magicDetails.find(j => j.magic === selectMagic.value);
-      const displayMagicDetails = document.getElementById('display-magic-details');
-      displayMagicDetails.innerHTML = job
-      ? `<b>${job.magic}</b>, ${job.details}`
-      : '';
+fetch('magic.json').then(res => res.json()).then(data => {
+  magicDetails = data;
+  const selectMagic = document.getElementById('select-magic');
+  selectMagic.innerHTML = '<option value="">Choose...</option>';
+  data.forEach(magic => {
+    const option = document.createElement('option');
+    option.value = magic.magic;
+    option.textContent = magic.magic;
+    selectMagic.appendChild(option);
+  })
+
+  selectMagic.addEventListener('change', () => {
+    const job = magicDetails.find(j => j.magic === selectMagic.value);
+    const displayMagicDetails = document.getElementById('display-magic-details');
+    displayMagicDetails.innerHTML = job
+    ? `<b>${job.magic}</b>, ${job.details}`
+    : '';
     
     // Update Character Object
     characterDetails.magic_type = job.magic;
@@ -99,4 +100,4 @@ fetch('medieval_jobs.json')
     
     console.log(characterDetails);
   });
-  })
+})
