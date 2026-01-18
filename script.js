@@ -34,7 +34,6 @@ function createJobDropdown(literacy, jobs, container) {
       selectJob.appendChild(option);
     });
 
-  // Event listener
   selectJob.addEventListener('change', () => {
     const job = jobs.find(j => j.title === selectJob.value);
     
@@ -101,3 +100,4 @@ fetch('magic.json').then(res => res.json()).then(data => {
     console.log(characterDetails);
   });
 })
+
