@@ -2,25 +2,25 @@
     {
         "name": "Bow",
         "range": 200,
-        "shield": "No",
+        "shield": "No shield permitted",
         "damage_bonus": 0
     },
     {
         "name": "One-Handed Melee Weapon",
         "range": 10,
-        "shield": "Yes",
+        "shield": "Shield is permitted",
         "damage_bonus": 0
     },
     {
         "name": "Two-Handed Melee Weapon",
         "range": 10,
-        "shield": "No",
+        "shield": "No shield permitted",
         "damage_bonus": 1
     },
     {
         "name": "Thrown Weapon",
         "range": 40,
-        "shield": "Yes",
+        "shield": "Shield is permitted",
         "damage_bonus": 0
     }
 ]

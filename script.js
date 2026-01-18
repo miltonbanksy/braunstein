@@ -53,7 +53,6 @@ function createJobDropdown(literacy, jobs, container) {
     characterDetails.luck = job.luck;
     characterDetails.lore = job.lore;
     
-    console.log(characterDetails);
   });
 
   container.appendChild(section);
@@ -69,7 +68,6 @@ fetch('medieval_jobs.json')
 
     // Get unique literacy types
     const literacyTypes = [...new Set(data.map(job => job.literacy))];
-    console.log(literacyTypes)
 
     // Create dropdown for each literacy type
     literacyTypes.forEach(type => createJobDropdown(type, data, container));
@@ -148,5 +146,37 @@ fetch('weapons.json').then(res => res.json()).then(data => {
     characterDetails.weapon_range = job.range;
     characterDetails.weapon_shield = job.shield;
     characterDetails.weapon_damage_bonus = job.damage_bonus;
+    characterDetails.backpack = "Backpack (Capacity 15 items, 1000 sp)";
+    characterDetails.food = "Food & Water (1 week)";
   });
 });
+
+const buttonFinishCharacter = document.getElementById('button-finish-character');
+const displayFinishedCharacter = document.getElementById('display-finished-character');
+
+buttonFinishCharacter.addEventListener('click', () => {
+  displayFinishedCharacter.innerHTML = `<hr>
+  Name: 
+  <br><br>Occupation:\t${characterDetails.job_title}, (${characterDetails.job_type}) ${characterDetails.job_description}
+  <br>Experience: 0
+  <br>Literacy: ${characterDetails.literacy}
+  <br>Luck: ${characterDetails.luck} / ${characterDetails.luck}
+  <br>Lore: +${characterDetails.lore}
+  
+  <br>Magic: ${characterDetails.magic_type}, ${characterDetails.magic_details}
+  <br><br>Armor: ${characterDetails.armor_type}, Move: ${characterDetails.armor_move}, Climb: ${characterDetails.armor_climb}
+  <br>Defence: ${characterDetails.armor_defence}
+  <br>Penalty: ${characterDetails.armor_penalty}
+  <br><br>Weapon: ${characterDetails.weapon_name} +${characterDetails.weapon_damage_bonus}, ${characterDetails.weapon_range}', ${characterDetails.weapon_shield}
+  <br><br>Backpack (Capacity: Max 15 items, Max 1000 silver pieces)
+  <br>Food & Water (1 week)
+  <br><br>Drives & Goals:
+  <br><br>History / Background:
+  <br><br>Appearance:
+  <br><br>Personality:
+  <br><br>Abilities:
+  <br><br>Patrons / Friends / Rivals / Enemies / Complications, etc:
+  `;
+
+});
+  
