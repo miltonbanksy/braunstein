@@ -1,0 +1,5 @@
+[
+    {"magic": "Non-Magic User", "details": "Able to wear armor. Unable to cast spells."},
+    {"magic": "Magic User", "details": "Unable to wear armor. Able to cast 3 spells per day."}
+    
+]
