@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Bow",
+        "range": 200,
+        "shield": "No",
+        "damage_bonus": 0
+    },
+    {
+        "name": "One-Handed Melee Weapon",
+        "range": 10,
+        "shield": "Yes",
+        "damage_bonus": 0
+    },
+    {
+        "name": "Two-Handed Melee Weapon",
+        "range": 10,
+        "shield": "No",
+        "damage_bonus": 1
+    },
+    {
+        "name": "Thrown Weapon",
+        "range": 40,
+        "shield": "Yes",
+        "damage_bonus": 0
+    }
+]

@@ -2,6 +2,7 @@ let characterDetails = {};
 let medievalJobs = [];
 let magicDetails = [];
 let armorDetails = [];
+let weaponDetails = [];
 
 const displayCharacterDetails = document.getElementById('display-character-details');
 
@@ -97,22 +98,19 @@ fetch('magic.json').then(res => res.json()).then(data => {
     // Update Character Object
     characterDetails.magic_type = job.magic;
     characterDetails.magic_details = job.details;
-    
-    console.log(characterDetails);
   });
 })
 
 fetch('armor.json').then(res => res.json()).then(data => {
   armorDetails = data;
-  console.log(armorDetails);
   const selectArmor = document.getElementById('select-armor');
   selectArmor.innerHTML = `<option value="">Choose...</option>`;
   data.forEach(armor => {
     const option = document.createElement('option');
-    option.value = `${armor.type}`;
+    option.value = armor.type;
     option.textContent = `(${armor.rule}) ${armor.type}`;
     selectArmor.appendChild(option);
-  })
+  });
 
   selectArmor.addEventListener('change', () => {
     const job = armorDetails.find(j => j.type === selectArmor.value);
@@ -127,7 +125,28 @@ fetch('armor.json').then(res => res.json()).then(data => {
     characterDetails.armor_move = job.move;
     characterDetails.armor_climb = job.climb;
     characterDetails.armor_penalty = job.penalty;
-    
-    console.log(characterDetails);
   });
-})
+});
+
+fetch('weapons.json').then(res => res.json()).then(data => {
+  weaponDetails = data;
+  const selectWeapon = document.getElementById('select-weapon');
+  selectWeapon.innerHTML = `<option value="">Choose...</option>`;
+  data.forEach(weapon => {
+    const option = document.createElement('option');
+    option.value = weapon.name;
+    option.textContent = weapon.name;
+    selectWeapon.appendChild(option);
+  });
+
+  selectWeapon.addEventListener('change', () => {
+    const job = weaponDetails.find(j => j.name === selectWeapon.value);
+    const displayWeaponDetails = document.getElementById('display-weapon-details');
+    displayWeaponDetails.innerHTML = job ? `<b>${job.name}` : '';
+
+    characterDetails.weapon_name = job.name;
+    characterDetails.weapon_range = job.range;
+    characterDetails.weapon_shield = job.shield;
+    characterDetails.weapon_damage_bonus = job.damage_bonus;
+  });
+});
