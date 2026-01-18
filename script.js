@@ -1,6 +1,8 @@
 let characterDetails = {}
 let medievalJobs = []; // store all jobs
 
+const displayCharacterDetails = document.getElementById('display-character-details');
+
 // Helper to create a dropdown + details container
 function createJobDropdown(literacy, jobs, container) {
   const section = document.createElement('div');
@@ -34,9 +36,22 @@ function createJobDropdown(literacy, jobs, container) {
   // Event listener
   select.addEventListener('change', () => {
     const job = jobs.find(j => j.title === select.value);
-    details.innerHTML = job
-      ? `<b>${job.title}</b> (${job.type})<br>${job.description}`
+    
+    displayCharacterDetails.innerHTML = job
+      ? `<br><b>${job.title}</b>, ${job.literacy}, ${job.type}<br>${job.description}`
       : '';
+
+    select.innerHTML = '<option value="">Choose a job</option>';
+    
+    // Update Character Object
+    characterDetails.job_title = job.title;
+    characterDetails.job_type = job.type;
+    characterDetails.job_description = job.description;
+    characterDetails.literacy = job.literacy;
+    characterDetails.luck = job.luck;
+    characterDetails.lore = job.lore;
+    
+    console.log(characterDetails);
   });
 
   container.appendChild(section);
