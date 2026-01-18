@@ -14,9 +14,9 @@ function createJobDropdown(literacy, jobs, container) {
   section.appendChild(label);
 
   // Dropdown
-  const select = document.createElement('select');
-  select.innerHTML = '<option value="">Choose a job</option>';
-  section.appendChild(select);
+  const selectJob = document.createElement('select');
+  selectJob.innerHTML = '<option value="">Choose a job</option>';
+  section.appendChild(selectJob);
 
   // Details container
   const details = document.createElement('div');
@@ -30,18 +30,18 @@ function createJobDropdown(literacy, jobs, container) {
       const option = document.createElement('option');
       option.value = job.title;
       option.textContent = job.title;
-      select.appendChild(option);
+      selectJob.appendChild(option);
     });
 
   // Event listener
-  select.addEventListener('change', () => {
-    const job = jobs.find(j => j.title === select.value);
+  selectJob.addEventListener('change', () => {
+    const job = jobs.find(j => j.title === selectJob.value);
     
     displayCharacterDetails.innerHTML = job
       ? `<br><b>${job.title}</b>, ${job.literacy}, ${job.type}<br>${job.description}`
       : '';
 
-    select.innerHTML = '<option value="">Choose a job</option>';
+    //selectJob.innerHTML = '<option value="">Choose a job</option>';
     
     // Update Character Object
     characterDetails.job_title = job.title;
@@ -73,3 +73,14 @@ fetch('medieval_jobs.json')
     literacyTypes.forEach(type => createJobDropdown(type, data, container));
   })
   .catch(err => console.error('Error fetching JSON:', err));
+
+  fetch('magic.json').then(res => res.json()).then(data => {
+    magic = data;
+    const selectMagic = document.getElementById('select-magic');
+    data.forEach(magic => {
+      const option = document.createElement('option');
+      option.value = magic.magic;
+      option.textContent = magic.magic;
+      selectMagic.appendChild(option);
+    })
+  })
