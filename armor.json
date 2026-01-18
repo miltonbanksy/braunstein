@@ -1,7 +1,7 @@
 [
     {
         "rule": "basic rules",
-        "type": "No Armor", 
+        "type": "No Body Armor or Shield", 
         "defence": "If luck is reduced to 0, character is out of the fight",
         "move": 50,
         "climb": 10,
@@ -9,7 +9,7 @@
     },
     {
         "rule": "basic rules",
-        "type": "Armored", 
+        "type": "Body Armor", 
         "defence": "If luck is reduced to 0, restore 10% of total Luck (rounded up). Armor is unusuable until repaired.",
         "move": 30,
         "climb": 0,
@@ -17,15 +17,7 @@
     },
     {
         "rule": "advanced rules",
-        "type": "No Armor", 
-        "defence": "If luck is reduced to 0, character is out of the fight",
-        "move": 50,
-        "climb": 10,
-        "penalty": "No penalty to stealth, climb, swim, etc."
-    },
-    {
-        "rule": "advanced rules",
-        "type": "Light Armor", 
+        "type": "Light Body Armor", 
         "defence": "If luck is reduced to 0, restore 10% of total Luck (rounded up). Armor is unusuable until repaired.",
         "move": 40,
         "climb": 5,
@@ -33,8 +25,24 @@
     },
     {
         "rule": "advanced rules",
-        "type": "Heavy Armor", 
+        "type": "Heavy Body Armor", 
         "defence": "If luck is reduced to 0, restore 20% of total Luck (rounded up). Armor is unusuable until repaired.",
+        "move": 30,
+        "climb": 0,
+        "penalty": "No run, stealth, climb, swim, etc."
+    },
+    {
+        "rule": "basic rules",
+        "type": "Shield A", 
+        "defence": "Allows the character to ignore up to 3 points of damage from a single attack, after which the item is damaged and unusable.",
+        "move": 30,
+        "climb": 0,
+        "penalty": "No run, stealth, climb, swim, etc."
+    },
+    {
+        "rule": "alternative rules",
+        "type": "Shield B", 
+        "defence": "allows the character to ignore 3 hits of damage incrementally, after which the item is damaged and unusable.",
         "move": 30,
         "climb": 0,
         "penalty": "No run, stealth, climb, swim, etc."

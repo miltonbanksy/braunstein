@@ -124,9 +124,9 @@ fetch('armor.json').then(res => res.json()).then(data => {
     // Update Character Object
     characterDetails.armor_type = job.type;
     characterDetails.armor_defence = job.defence;
-    characterDetails.armor_defence = job.move;
-    characterDetails.armor_defence = job.climb;
-    characterDetails.armor_defence = job.penalty;
+    characterDetails.armor_move = job.move;
+    characterDetails.armor_climb = job.climb;
+    characterDetails.armor_penalty = job.penalty;
     
     console.log(characterDetails);
   });
