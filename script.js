@@ -1,6 +1,7 @@
-let characterDetails = {}
-let medievalJobs = []; // store all jobs
-let magicDetails = []; // store magic options
+let characterDetails = {};
+let medievalJobs = [];
+let magicDetails = [];
+let armorDetails = [];
 
 const displayCharacterDetails = document.getElementById('display-character-details');
 
@@ -101,3 +102,32 @@ fetch('magic.json').then(res => res.json()).then(data => {
   });
 })
 
+fetch('armor.json').then(res => res.json()).then(data => {
+  armorDetails = data;
+  console.log(armorDetails);
+  const selectArmor = document.getElementById('select-armor');
+  selectArmor.innerHTML = `<option value="">Choose...</option>`;
+  data.forEach(armor => {
+    const option = document.createElement('option');
+    option.value = `${armor.type}`;
+    option.textContent = `(${armor.rule}) ${armor.type}`;
+    selectArmor.appendChild(option);
+  })
+
+  selectArmor.addEventListener('change', () => {
+    const job = armorDetails.find(j => j.type === selectArmor.value);
+    const displayArmorDetails = document.getElementById('display-armor-details');
+    displayArmorDetails.innerHTML = job
+    ? `<b>${job.type}</b>, ${job.defence}`
+    : '';
+    
+    // Update Character Object
+    characterDetails.armor_type = job.type;
+    characterDetails.armor_defence = job.defence;
+    characterDetails.armor_defence = job.move;
+    characterDetails.armor_defence = job.climb;
+    characterDetails.armor_defence = job.penalty;
+    
+    console.log(characterDetails);
+  });
+})
