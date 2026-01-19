@@ -1,0 +1,84 @@
+html {
+    height: 90%;
+    padding: 20px;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /*Stack items*/
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.manufacturing-consent-regular {
+  font-family: "Manufacturing Consent", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex: 1;
+}
+
+.main-title {
+    font-size: 60px;
+    color: antiquewhite;
+}
+
+.main-sub-title {
+    font-size: 40px;
+    color: antiquewhite;
+}
+
+.main-title-button {
+    font-size: 40px;
+    background-color: black;
+    color: white
+}
+
+.fade-element-in {
+    animation: fadeIn 10s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.background-white-to-black {
+    animation: white-to-black 4s forwards;
+}
+
+@keyframes white-to-black {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: rgb(29, 0, 0);
+    }
+}
+
+.glide-up {
+    transition: glideUp 4s forwards;
+}
+
+@keyframes glideUp {
+    from {
+        position: inherit;
+    }
+    to {
+        top: 1px;
+    }
+}
