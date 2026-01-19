@@ -22,23 +22,63 @@ body {
 }
 
 .container {
-    position: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
     flex: 1;
 }
 
-
-
 .main-title {
     font-size: 60px;
+    color: antiquewhite;
 }
 
 .main-sub-title {
     font-size: 40px;
+    color: antiquewhite;
 }
 
 .main-title-button {
     font-size: 40px;
+    background-color: black;
+    color: white
+}
+
+.fade-element-in {
+    animation: fadeIn 10s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.background-white-to-black {
+    animation: white-to-black 4s forwards;
+}
+
+@keyframes white-to-black {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: rgb(29, 0, 0);
+    }
+}
+
+.glide-up {
+    transition: glideUp 4s forwards;
+}
+
+@keyframes glideUp {
+    from {
+        position: inherit;
+    }
+    to {
+        top: 1px;
+    }
 }
